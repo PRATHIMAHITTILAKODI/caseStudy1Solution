@@ -11,9 +11,8 @@ public class StaffMain {
 		Double s1= applicant.getSubject1Mark();
 		Double s2= applicant.getSubjec2Mark();
 		Double s3= applicant.getSubject3Mark();
-		if(s1<50.0||s2<50.0||s2<50.0) {
-			return (double) 0;
-		}
+		if(s1<50.0||s2<50.0||s2<50.0) 
+			return 0.0;
 		else {
 	    Double total=s1+s2+s3;
 	    return total;
@@ -33,21 +32,19 @@ public class StaffMain {
     	System.out.println("Enter applicants details");
     	String inuptString=sc.nextLine();
     		String arr[]=inuptString.split(",");
-    		int id=Integer.parseInt(arr[0]);
-    		double subMark1=Double.parseDouble(arr[2]);
-    		double subMark2=Double.parseDouble(arr[3]);
-    		double subMark3=Double.parseDouble(arr[4]);
+    		double subMark1=Double.parseDouble(arr[1]);
+    		double subMark2=Double.parseDouble(arr[2]);
+    		double subMark3=Double.parseDouble(arr[3]);
     		if(subMark1<0.0|| subMark2<0.0 || subMark3<0.0||subMark1>100.0|| subMark2>100.0 || subMark3>100.0) {
     			throw new MarksException("Mark is negative!");
     		}
-    		else {
-    			Applicant a=new Applicant(arr[1],subMark1,subMark2,subMark3,null,null);
+    			Applicant a=new Applicant(arr[0],subMark1,subMark2,subMark3,null,null);
     			double total = totalCalculation(a);
     			a.setTotal(total);
     			double percentage = Double.parseDouble(df.format(percentageCalculation(total)));
     			a.setPercentage(percentage);
     			listApplicant.add(a);
-    			}
+    			
     		}
     		
     		for(Applicant applicant: listApplicant) {

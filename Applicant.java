@@ -24,12 +24,6 @@ public class Applicant {
 		this.total = total;
 		this.percentage = percentage;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
@@ -65,12 +59,6 @@ public class Applicant {
 	}
 	public void setPercentage(Double percentage) {
 		this.percentage = percentage;
-	}
-	public static int getIdGenerator() {
-		return idGenerator;
-	}
-	public static void setIdGenerator(int idGenerator) {
-		Applicant.idGenerator = idGenerator;
 	}
 	@Override
 	public String toString() {
